@@ -22,7 +22,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 DHT_TYPE = Adafruit_DHT.DHT22
 
-DHT_PIN = 7
+DHT_PIN = 23
 
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
 
