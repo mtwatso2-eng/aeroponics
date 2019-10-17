@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "aeroponicsspreadsheet",
+  "private_key_id": "5f96f7f87ebde7cb5682ecf421bc2c5d55845201",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCPCl3yH3vlqmOK\n11xTWRpgQspwl+xX/BuKJ4962PA0BrkLWRaRnb3r2JQWn2O6+cyjoSh3nBLjKKu/\nf3SsvNIkjiG0fX0hrvJ5nkhSiYwTZYrU3x5D/04DFVYLTyNYrLB2LvnCSvZl1ncO\n43OlFHrmGHUbPza9GvQpaJqOH7nuY+GO2sHr+9jkCwBSuTARKrQRklpjMfRxB2S6\n+kTk4Vknqkx5PRGIi+5/Zc0+DbNFKnhdq03IGhU6c/PTxJdzcJCd5lP8UPyWQVps\nvPUWBHB3bzM1uvI6DmMhHCMvb+ufDde7kgN4phZKDA9wartx41nb5rRi6OwOegYP\nLe+TOxONAgMBAAECggEAB6FGGpy6/Ki775OGTWcy2iX7QMnx0E2r4GY00pjmKI2f\n6u7hHnpbakxetd2MXH8SVJDLpPmyeOMvVM3ag5OnjU326/byU6Ij4ACP8LXSlCmg\noAiYx4gY+V7MJ1qc0uWUnMaWXwVQTbqva3VkMqQ8MVrmSuzydrWMhvWZTPHR9q57\n1KIWe7YhWv2qoxbe8eziWQn4FQes5yP3rC6J4qb5ANftKd+mYBONcdhJJpdKWwOy\npv42N8JmbthodiK/aVi5i/4BfdGKeUuNkZm058wAagd2tu+3HSgprWQUTRBtGgAS\nj7KoKkk9Q0ul6enYW0lGor7OKybjTNGWpGU6Hv01QQKBgQDFEsQpLYMjay+p8KCK\nn97VmsLgFGJkdIeZK9GCo5+ReKv/sTD4nXiIGaI7dTiuW83x53iIpEpCmtDIcelK\nmIqpdHbjs134Wxit7lh3dy1FuKFj983kSR5QmhfIM7Wj0atFaBidsz5hzzNkm7W5\nCMCXU8x4KuMbIc536PUQN17grQKBgQC5z5a0PpEjbinhJcdPQOdgnJkuWA43NVjv\nlvR3t5hKN6VQDgg/KhVTq5vIDpaIka0/x985PGuw5TexsfR5xljYZv5WBTvJKJ4V\nbu7bweZrg9m6ak771pqAxXOESWh4a5LWfuI2Qt4KiOm9LsX0YKTC2PDH+CM4s2NU\nM3yC7Tv6YQKBgEhkTl5583QtSYL5e1+wvmBkyzUZB9Oy4qSnbfy5MkJzu2rfogeR\ngNct42RH+RxDaPF1f9dh0k2JJSyce4AFbNo2h/24w8oZXIV3ylOIGb9ExTQ9sQos\nudAN6rKGHDEjMfD6/h/f2gh/3ncUo7pmtqhgBfoWdvpefsOZdXwReu65AoGAPncb\nIt0lzdNrINWie3JGVqROmtXfcY/tph4JcXW3LLwoRxFwlEuBf+9hH5BH6wGOTLLU\nyFkXmxBz+Ljqh0W2+IknV6PKxYVyH6J7ikVVQS/CMnkqtF8g8clvXDmRdWo0owdk\n5Pj1zHTan07qHY2f1iE4UQGKVbV43wWwBhPa5gECgYA+3lgCXetQK/fReSx/vi5X\n5SCA13OShP9U9mAjAeQ8pi0xCy3S6Qdm61/5omB80Kv6b+4AA8vIfTVwsLb+y0kW\nqx6F+6qiHM7pVWoC93EzB0QlQMeE+pufbyV49Z4kaADZfz5ilJgMSSxcw0sXkT19\nMUN7T6UJ/BZx+Sr1xxkPBg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "aeroponicsspreadsheet@aeroponicsspreadsheet.iam.gserviceaccount.com",
+  "client_id": "103416080683000317977",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/aeroponicsspreadsheet%40aeroponicsspreadsheet.iam.gserviceaccount.com"
+}

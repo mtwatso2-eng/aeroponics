@@ -24,7 +24,7 @@ DHT_TYPE = Adafruit_DHT.DHT22
 
 DHT_PIN = 7
 
-GDOCS_OAUTH_JSON        = 'client_secret_424796253504-7lgtqeujnqu17nbbgqpdo3g39ogtjv55.apps.googleusercontent.com.json'
+GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
 
 GDOCS_SPREADSHEET_NAME  = 'AeroponicsData'
 
