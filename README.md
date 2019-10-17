@@ -44,8 +44,8 @@ A library to designed to automate and optimize sweetpoato cutting growth in a gr
 5. Configure the wifi network. These settings should work for most networks. Contact your network administrator if you are unsure. 
       - Windows and Mac right click and create a file with the following contents, save as wpa_supplicant.conf in /boot/
       - Linux run the command `sudo nano wpa_supplicant.conf` from the correct directory and enter the following. Use ctrl + o and ctrl + x to write the file and exit
-
-`ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=US
 
@@ -53,9 +53,9 @@ network={
      ssid="Your network name/SSID"
      psk="Your WPA/WPA2 security key"
      key_mgmt=WPA-PSK
-}`
-
-      - The pi will write these values in the correct directory on first boot
+}
+```
+  - The pi will write these values in the correct directory on first boot
 
 6. Unmount the microSD and insert it into the Pi. Apply 5v of power through the microUSB port and wait 2 minutes for the pi to run its initial boot process. 
 
