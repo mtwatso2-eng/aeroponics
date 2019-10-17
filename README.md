@@ -13,7 +13,7 @@ A library to designed to automate and optimize sweetpoato cutting growth in a gr
 - Large plastic tub
 - High pressure pump
 - Plumbing material
-- Teejet Spraytip
+- Teejet spray tip
 - Styrafoam
 
 **Electronics**
