@@ -2,18 +2,14 @@ import board
 import digitalio
 import busio
 
-print("Hello blinka!")
-
-    # Try to great a Digital input
-pin = digitalio.DigitalInOut(board.D4)
-print("Digital IO ok!")
-
     # Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
 print("I2C ok!")
 
     # Try to create an SPI device
-spi = busio.SPI(board.SCLK, board.MOSI, board.MISO)
-print("SPI ok!")
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 
-print("done!")
+ads = ADS.ADS1115(i2c)
+chan - AnalogIn(ads, ADS.PO)
+print(chan.value, chan.voltage)
