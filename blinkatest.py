@@ -8,8 +8,8 @@ print("I2C ok!")
 
     # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
-from adafruit_ads1x15.AnalogIn import AnalogIn
+from adafruit_ads1x15.analog_in import AnalogIn
 
 ads = ADS.ADS1115(i2c)
-chan = AnalogIn(ads, ADS.PO)
+chan = AnalogIn(ads, ADS.P2)
 print(chan.value, chan.voltage)
