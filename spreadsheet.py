@@ -15,10 +15,21 @@ import json
 import sys
 import time
 import datetime
+import board
+import digitalio
+import busio
 
 import Adafruit_DHT
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+
+    # Try to create an I2C device
+i2c = busio.I2C(board.SCL, board.SDA)
+print("I2C ok!")
+
+# Try to create an SPI device
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 
 DHT_TYPE = Adafruit_DHT.DHT22
 
@@ -54,6 +65,9 @@ while True:
 
     # Attempt to get sensor reading.
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
+    ads = ADS.ADS1115(i2c)
+    chan = AnalogIn(ads, ADS.P2)
+
 
     # Skip to the next reading if a valid measurement couldn't be taken.
     if humidity is None or temp is None:
@@ -62,10 +76,11 @@ while True:
 
     print('Temperature: {0:0.1f} C'.format(temp))
     print('Humidity:    {0:0.1f} %'.format(humidity))
+    print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
