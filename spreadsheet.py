@@ -87,7 +87,7 @@ while True:
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, s.getsockname))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, s.getsockname()))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
