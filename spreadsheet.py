@@ -11,19 +11,31 @@
 
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
+
+# import libraries
 import json
 import sys
 import time
 import datetime
 import board
+import socket
 import digitalio
 import busio
-
 import Adafruit_DHT
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-    # Try to create an I2C device
+#FetchIP
+def get_Host_name_IP():
+    try:
+        host_name = socket.gethostname()
+        host_ip = socket.gethostbyname(host_name)
+        print("Hostname :  ",host_name)
+        print("IP : ",host_ip)
+    except:
+        print("Unable to get Hostname and IP")
+
+# Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
 print("I2C ok!")
 
@@ -80,7 +92,7 @@ while True:
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, host_name, host_ip))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
