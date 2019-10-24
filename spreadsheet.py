@@ -73,8 +73,8 @@ while True:
     #FetchIP
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
-    print(s.getsockname()[0])
-    ip = s.getsockname()
+    ip = (s.getsockname()[0])
+    print(ip)
     s.close()
     # Skip to the next reading if a valid measurement couldn't be taken.
     if humidity is None or temp is None:
