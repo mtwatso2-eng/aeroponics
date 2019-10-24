@@ -71,11 +71,11 @@ while True:
     chan = AnalogIn(ads, ADS.P2)
 
     #FetchIP
-    hostname = socket.gethostname()
-    IPAddr = socket.gethostbyname(hostname)
-    print("Your Computer Name is:" + hostname)
-    print("Your Computer IP Address is:" + IPAddr)
-
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    print(s.getsockname()[0])
+    s.close()
     # Skip to the next reading if a valid measurement couldn't be taken.
     if humidity is None or temp is None:
         time.sleep(2)
@@ -87,7 +87,7 @@ while True:
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, host_name, host_ip))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, s.getsockname))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
