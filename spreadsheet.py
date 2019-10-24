@@ -25,17 +25,6 @@ import Adafruit_DHT
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-#FetchIP
-def get_Host_name_IP():
-    try:
-        host_name = socket.gethostname()
-        host_ip = socket.gethostbyname(host_name)
-        print("Hostname :  ",host_name)
-        print("IP : ",host_ip)
-    except:
-        print("Unable to get Hostname and IP")
-get_Host_name_IP()
-
 # Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
 print("I2C ok!")
@@ -80,7 +69,12 @@ while True:
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
-    get_Host_name_IP()
+
+    #FetchIP
+    hostname = socket.gethostname()
+    IPAddr = socket.gethostbyname(hostname)
+    print("Your Computer Name is:" + hostname)
+    print("Your Computer IP Address is:" + IPAddr)
 
     # Skip to the next reading if a valid measurement couldn't be taken.
     if humidity is None or temp is None:
