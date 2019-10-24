@@ -34,6 +34,7 @@ def get_Host_name_IP():
         print("IP : ",host_ip)
     except:
         print("Unable to get Hostname and IP")
+get_Host_name_IP()
 
 # Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
