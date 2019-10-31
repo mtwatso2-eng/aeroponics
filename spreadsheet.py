@@ -11,36 +11,41 @@
 
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
+
+# import libraries
+# For Google Sheets
 import json
 import sys
 import time
 import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+# For Pi Board inputs
 import board
 import digitalio
 import busio
-
+# For Pi Software
 import Adafruit_DHT
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+import socket
 
-    # Try to create an I2C device
+# Configure ADC connections
+# Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
-print("I2C ok!")
-
 # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
+print("Connected")
 
+# Set Sensor Type and Pin Number (BCM)
 DHT_TYPE = Adafruit_DHT.DHT22
-
 DHT_PIN = 23
 
+# Identify Google developer credentials and name of destination spreadsheet
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
-
 GDOCS_SPREADSHEET_NAME  = 'AeroponicsData'
-
+#Set loop time in seconds
 FREQUENCY_SECONDS       = 60
-
+# Open google credentials and attempt to log in and find the correct spreadsheet
 def login_open_sheet(oauth_key_file, spreadsheet):
     """Connect to Google Docs spreadsheet and return the first worksheet."""
     try:
@@ -54,7 +59,7 @@ def login_open_sheet(oauth_key_file, spreadsheet):
         print('Google sheet login failed with error:', ex)
         sys.exit(1)
 
-
+#Log sensor data, log locally, append to the cloud
 print('Logging sensor measurements to {0} every {1} seconds.'.format(GDOCS_SPREADSHEET_NAME, FREQUENCY_SECONDS))
 print('Press Ctrl-C to quit.')
 worksheet = None
@@ -68,7 +73,13 @@ while True:
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
 
-
+    #Fetch IP address
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    ip = (s.getsockname()[0])
+    print(ip)
+    s.close()
+    
     # Skip to the next reading if a valid measurement couldn't be taken.
     if humidity is None or temp is None:
         time.sleep(2)
@@ -80,7 +91,7 @@ while True:
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, ip))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
