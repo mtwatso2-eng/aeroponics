@@ -34,9 +34,9 @@ while True:
       print ("Good bye!")
 
       time.sleep(20)
-# End program cleanly with keyboard
-except KeyboardInterrupt:
-  print ("  Quit")
+    # End program cleanly with keyboard
+    except KeyboardInterrupt:
+      print ("  Quit")
 
-  # Reset GPIO settings
-  GPIO.cleanup()
+      # Reset GPIO settings
+      GPIO.cleanup()
