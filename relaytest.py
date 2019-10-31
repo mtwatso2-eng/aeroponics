@@ -13,7 +13,7 @@ while True:
 
     # time to sleep between operations in the main loop
 
-
+        SleepTimeL = 4
 
     # main loop
 
@@ -34,6 +34,7 @@ while True:
       print ("Good bye!")
 
       time.sleep(20)
+
     # End program cleanly with keyboard
     except KeyboardInterrupt:
       print ("  Quit")
