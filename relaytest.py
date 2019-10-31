@@ -1,12 +1,6 @@
 #!/usr/bin/python
-import RPi.GPIO as GPIO
-import time
 
-GPIO.setmode(GPIO.BCM)
-
-# init list with pin numbers
-
-pinList = [21, 22, 27, 17]
+from setup import pinList
 
 # loop through pins and set mode and state to 'high'
 
