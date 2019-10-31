@@ -2,8 +2,8 @@
 # startup.sh
 # change directories and execute startup programs
 
-cd /home/chan/code/aeroponics
-python3 spreadsheet.py
+cd /home/pi/code/aeroponics
+sudo python3 spreadsheet.py
 cd
 
 
