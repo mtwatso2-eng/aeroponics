@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-while: True
+while True:
     import RPi.GPIO as GPIO
     from setup import pinList
     import time
