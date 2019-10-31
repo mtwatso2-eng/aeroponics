@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import RPi.GPIO as GPIO
 from setup import pinList
 
 # loop through pins and set mode and state to 'high'
