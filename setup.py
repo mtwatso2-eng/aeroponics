@@ -26,7 +26,6 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
-print("Connected")
 
 # Set Sensor Type and Pin Number (BCM)
 DHT_TYPE = Adafruit_DHT.DHT22
@@ -42,4 +41,4 @@ while True:
     print('Humidity:    {0:0.1f} %'.format(humidity))
     print(chan.value, chan.voltage)
 
-    time.sleep(4)
+    break
