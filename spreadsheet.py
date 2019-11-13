@@ -20,7 +20,25 @@ import time
 import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+# For Pi Board inputs
+import board
+import digitalio
+import busio
+# For Pi Software
+import Adafruit_DHT
+import socket
 
+# Configure ADC connections
+# Try to create an I2C device
+i2c = busio.I2C(board.SCL, board.SDA)
+# Try to create an SPI device
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
+print("Connected")
+
+# Set Sensor Type and Pin Number (BCM)
+DHT_TYPE = Adafruit_DHT.DHT22
+DHT_PIN = 23
 
 # Identify Google developer credentials and name of destination spreadsheet
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
@@ -50,6 +68,11 @@ while True:
     if worksheet is None:
         worksheet = login_open_sheet(GDOCS_OAUTH_JSON, GDOCS_SPREADSHEET_NAME)
 
+    # Attempt to get sensor reading.
+    humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
+    ads = ADS.ADS1115(i2c)
+    chan = AnalogIn(ads, ADS.P2)
+
     #Fetch IP address
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
@@ -57,8 +80,14 @@ while True:
     print(ip)
     s.close()
 
-    #Import Sensor data
-    from setup import temp humidity chan.value chan.voltage
+    # Skip to the next reading if a valid measurement couldn't be taken.
+    if humidity is None or temp is None:
+        time.sleep(2)
+        continue
+
+    print('Temperature: {0:0.1f} C'.format(temp))
+    print('Humidity:    {0:0.1f} %'.format(humidity))
+    print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
     try:
