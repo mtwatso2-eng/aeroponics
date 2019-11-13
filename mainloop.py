@@ -59,7 +59,7 @@ while True:
     chan = AnalogIn(ads, ADS.P2)
 
     #Save Data locally
-    with open('output.csv', 'w', newline='') as output
+    with open('output.csv', 'w', newline='') as output:
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         output.writerow([humidity, temp, humidity, chan.value, chan.voltage, error])
     time.sleep(FREQUENCY_SECONDS)
