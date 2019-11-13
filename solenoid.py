@@ -29,5 +29,6 @@ while True:
     Temp = df.Temp
     LightVa = df.LightValue
     LightVo = df.LightVoltage
+    continue
 
 print (Humidty, Temp, LightVa, LightVo)
