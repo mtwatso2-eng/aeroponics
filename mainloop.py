@@ -39,10 +39,13 @@ print("Connected")
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
+#init list with pin numbers
+pinList = [21, 22, 27, 17]
+
 #Set all pins high
-#for i in pinList:
-    #GPIO.setup(i, GPIO.OUT)
-    #GPIO.output(i, GPIO.HIGH)
+for i in pinList:
+    GPIO.setup(i, GPIO.OUT)
+    GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
 FREQUENCY_SECONDS       = 5
@@ -60,7 +63,24 @@ while True:
 
     #Save Data locally
     with open('output.csv', 'a', newline='') as output:
+        writer = csv.writer(output)
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        output.writerow([humidity, temp, chan.value, chan.voltage])
-        print(output)
+        output.writerow(["Humidity", "Temp", "LightValue", "LightVoltage"])
+
+        with open('humid.csv', 'r', newline='') as incsv:
+            reader = csv.reader(incsv)
+            writer.writerows(row + [humidity] for row in reader)
+
+        with open('temp.csv', 'r', newline='') as incsv:
+            reader = csv.reader(incsv)
+            writer.writerows(row[:1] + [temp] for row in reader)
+
+        with open('LightVa.csv', 'r', newline='') as incsv:
+            reader = csv.reader(incsv)
+            writer.writerows(row[:2] + [chan.value] for row in reader)
+
+        with open('LightVo.csv', 'r', newline='') as incsv:
+            reader = csv.reader(incsv)
+            writer.writerows(row[:3] + [chan.voltage] for row in reader)
+
     time.sleep(FREQUENCY_SECONDS)
