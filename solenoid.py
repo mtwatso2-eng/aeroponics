@@ -24,7 +24,7 @@ import pandas as pd
 #Loop
 while True:
     #Save Data locally
-    df = pd.read_csv(output)
+    df = pd.read_csv(output.csv)
     Humidity = df.Humidity
     Temp = df.Temp
     LightVa = df.LightValue

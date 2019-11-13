@@ -40,7 +40,7 @@ DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
 #init list with pin numbers
-pinList = [21, 22, 27, 17]
+#pinList = [21, 22, 27, 17]
 
 #Set all pins high
 #for i in pinList:
@@ -65,5 +65,4 @@ while True:
     with open('output.csv', 'a', newline='') as output:
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         output.writerow([humidity, temp, chan.value, chan.voltage])
-        print(output)
     time.sleep(FREQUENCY_SECONDS)
