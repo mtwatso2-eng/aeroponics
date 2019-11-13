@@ -43,9 +43,9 @@ DHT_PIN = 23
 pinList = [21, 22, 27, 17]
 
 #Set all pins high
-for i in pinList:
-    GPIO.setup(i, GPIO.OUT)
-    GPIO.output(i, GPIO.HIGH)
+#for i in pinList:
+#    GPIO.setup(i, GPIO.OUT)
+#    GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
 FREQUENCY_SECONDS       = 5
