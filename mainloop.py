@@ -58,11 +58,11 @@ while True:
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
     #Check for errors
-        if humidity is None or temp is None:
-            error = True
-            time.sleep(5)
-            continue
-        if error = True
+    if humidity is None or temp is None:
+        error = True
+        time.sleep(5)
+        continue
+    if error = True
 
 
 
