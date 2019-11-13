@@ -45,7 +45,7 @@ DHT_PIN = 23
     #GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 2
+FREQUENCY_SECONDS       = 5
 
 #PrintToConsole
 print('Logging sensor measurements to {0} every {1} seconds.')
@@ -61,5 +61,6 @@ while True:
     #Save Data locally
     with open('output.csv', 'w', newline='') as output:
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        output.writerow([humidity, temp, humidity, chan.value, chan.voltage])
+        output.writerow([humidity, temp, chan.value, chan.voltage])
+        print(output)
     time.sleep(FREQUENCY_SECONDS)
