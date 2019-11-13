@@ -31,4 +31,4 @@ while True:
     LightVo = df.LightVoltage
     continue
 
-print (Humidty, Temp, LightVa, LightVo)
+print (Humidity, Temp, LightVa, LightVo)
