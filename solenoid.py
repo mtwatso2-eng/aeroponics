@@ -20,7 +20,7 @@ import pandas as pd
 
 #Set loop time in seconds
 #FREQUENCY_SECONDS       = 60
-
+print(live)
 #Loop
 while True:
     #Save Data locally
@@ -31,4 +31,4 @@ while True:
     LightVo = df.LightVoltage
     continue
 
-print (Humidity, Temp, LightVa, LightVo)
+print(Humidity, Temp, LightVa, LightVo)
