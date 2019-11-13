@@ -63,24 +63,7 @@ while True:
 
     #Save Data locally
     with open('output.csv', 'a', newline='') as output:
-        writer = csv.writer(output)
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        output.writerow(["Humidity", "Temp", "LightValue", "LightVoltage"])
-
-        with open('humid.csv', 'r', newline='') as incsv:
-            reader = csv.reader(incsv)
-            writer.writerows(row + [humidity] for row in reader)
-
-        with open('temp.csv', 'r', newline='') as incsv:
-            reader = csv.reader(incsv)
-            writer.writerows(row[:1] + [temp] for row in reader)
-
-        with open('LightVa.csv', 'r', newline='') as incsv:
-            reader = csv.reader(incsv)
-            writer.writerows(row[:2] + [chan.value] for row in reader)
-
-        with open('LightVo.csv', 'r', newline='') as incsv:
-            reader = csv.reader(incsv)
-            writer.writerows(row[:3] + [chan.voltage] for row in reader)
-
+        output.writerow([humidity, temp, chan.value, chan.voltage])
+        print(output)
     time.sleep(FREQUENCY_SECONDS)
