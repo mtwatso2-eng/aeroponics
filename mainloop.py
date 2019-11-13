@@ -40,9 +40,9 @@ DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
 #Set all pins high
-for i in pinList:
-    GPIO.setup(i, GPIO.OUT)
-    GPIO.output(i, GPIO.HIGH)
+#for i in pinList:
+    #GPIO.setup(i, GPIO.OUT)
+    #GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
 FREQUENCY_SECONDS       = 2
