@@ -61,5 +61,5 @@ while True:
     #Save Data locally
     with open('output.csv', 'w', newline='') as output:
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        output.writerow([humidity, temp, humidity, chan.value, chan.voltage, error])
+        output.writerow([humidity, temp, humidity, chan.value, chan.voltage])
     time.sleep(FREQUENCY_SECONDS)
