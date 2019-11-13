@@ -20,7 +20,7 @@ import pandas as pd
 
 #Set loop time in seconds
 #FREQUENCY_SECONDS       = 60
-print(live)
+print("live")
 #Loop
 while True:
     #Save Data locally
