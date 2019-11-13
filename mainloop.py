@@ -57,14 +57,6 @@ while True:
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
-    #Check for errors
-    if humidity is None or temp is None:
-        error = True
-        time.sleep(5)
-        continue
-    if error = True
-
-
 
     #Save Data locally
     with open('output.csv', mode='w') as output
