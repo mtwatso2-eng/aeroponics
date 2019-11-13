@@ -17,22 +17,27 @@
 import board
 import digitalio
 import busio
+
 # For Pi Software
 import Adafruit_DHT
 import socket
+import csv
+import time
+import datetime
+import sys
+
 # Configure ADC connections
 # Try to create an I2C device
 i2c = busio.I2C(board.SCL, board.SDA)
+
 # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 print("Connected")
+
 # Set Sensor Type and Pin Number (BCM)
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
-
-
-
 
 #Set all pins high
 for i in pinList:
@@ -40,7 +45,7 @@ for i in pinList:
     GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 60
+FREQUENCY_SECONDS       = 2
 
 #PrintToConsole
 print('Logging sensor measurements to {0} every {1} seconds.')
@@ -60,12 +65,9 @@ while True:
         if error = True
 
 
+
     #Save Data locally
     with open('output.csv', mode='w') as output
         output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         output.writerow([humidity, temp, humidity, chan.value, chan.voltage, error])
-    try:
-        GPIO.output(21, GPIO.LOW)
-        print ("ONE")
-
-    if Error
+    time.sleep(FREQUENCY_SECONDS)
