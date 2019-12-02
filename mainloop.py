@@ -48,7 +48,7 @@ DHT_PIN = 23
 #    GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 5
+FREQUENCY_SECONDS       = 30
 
 #PrintToConsole
 print('Logging sensor measurements to {0} every {1} seconds.')
@@ -75,8 +75,6 @@ while True:
     TEM.append(temp)
     LIGHT.append(chan.value)
     count = len(HUM)
-    print(type(humidity))
-    print(type(HUM))
     if (count >= 5):
         HUM.append(humidity)
         TEM.append(temp)
