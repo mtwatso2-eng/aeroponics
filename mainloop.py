@@ -55,7 +55,10 @@ print('Logging sensor measurements to {0} every {1} seconds.')
 print('Press Ctrl-C to quit.')
 
 #setvariables and type
-humidity, temp, ads, chan = 0.0
+humidity = 0.0
+temp = 0.0
+ads = 0.0
+chan = 0.0
 
 #create lists
 HUM = []
