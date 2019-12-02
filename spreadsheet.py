@@ -81,6 +81,7 @@ while True:
     s.close()
 
     # Skip to the next reading if a valid measurement couldn't be taken.
+    
     if humidity is None or temp is None:
         time.sleep(2)
         continue

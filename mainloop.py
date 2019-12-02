@@ -54,6 +54,11 @@ FREQUENCY_SECONDS       = 5
 print('Logging sensor measurements to {0} every {1} seconds.')
 print('Press Ctrl-C to quit.')
 
+#create lists
+HUM = []
+TEM = []
+LIGHT = []
+
 #Loop
 while True:
     #Read sensors
@@ -61,8 +66,30 @@ while True:
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
 
-    #Save Data locally
-    with open('output.csv', 'a', newline='') as output:
-        output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        output.writerow([humidity, temp, chan.value, chan.voltage])
+    HUM.append(humidity)
+    TEM.append(temp)
+    LIGHT.append(chan.value)
+
+    count = len(HUM)
+    if count >= 5
+        HUM.pop()
+        TEM.pop()
+        LIGHT.pop()
+        continue
+    HUMsum = sum(HUM)
+    TEMsum = sum(TEM)
+    LIGHTsum = sum(LIGHT)
+    HUMavg = HUMsum / 5
+    TEMavg = TEMsum / 5
+    LIGHTavg = LIGHTsum / 5
+
+    print(HUMavg, TEMavg, LIGHTavg)
     time.sleep(FREQUENCY_SECONDS)
+    
+
+
+    #Save Data locally
+    #with open('output.csv', 'a', newline='') as output:
+    #    output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    #    output.writerow([humidity, temp, chan.value, chan.voltage])
+    #time.sleep(FREQUENCY_SECONDS)

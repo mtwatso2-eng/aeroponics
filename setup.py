@@ -1,5 +1,4 @@
 #!/user/bin/python3
-import json
 import sys
 import time
 import datetime
@@ -30,15 +29,3 @@ from adafruit_ads1x15.analog_in import AnalogIn
 # Set Sensor Type and Pin Number (BCM)
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
-
-while True:
-    # Attempt to get sensor reading.
-    humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
-    ads = ADS.ADS1115(i2c)
-    chan = AnalogIn(ads, ADS.P2)
-
-    print('Temperature: {0:0.1f} C'.format(temp))
-    print('Humidity:    {0:0.1f} %'.format(humidity))
-    print(chan.value, chan.voltage)
-
-    break
