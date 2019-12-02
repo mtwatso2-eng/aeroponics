@@ -84,7 +84,7 @@ while True:
         LIGHT.append(chan.value)
     else:
         continue
-    print(len(HUM, TEMP, LIGHT))
+    print(len(HUM), len(TEMP), len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
     LIGHTsum = sum(LIGHT)
