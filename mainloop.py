@@ -81,9 +81,9 @@ while True:
     if (count == 5):
         continue
     elif (count > 5):
-        HUM.pop()
-        TEMP.pop()
-        LIGHT.pop()
+        HUM.pop(0)
+        TEMP.pop(0)
+        LIGHT.pop(0)
     elif (count < 5):
         HUM.append(humidity)
         TEMP.append(temperature)
@@ -96,9 +96,11 @@ while True:
     TEMPavg = TEMPsum/5
     LIGHTavg = LIGHTsum/5
     print(HUMavg, TEMPavg, LIGHTavg)
-    HUM.pop()
-    TEMP.pop()
-    LIGHT.pop()
+    print(TEMP)
+    print(LIGHT)
+    HUM.pop(0)
+    TEMP.pop(0)
+    LIGHT.pop(0)
     time.sleep(FREQUENCY_SECONDS)
 
 
