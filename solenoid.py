@@ -10,9 +10,11 @@ import LIGHTavg from mainloop
 
 FREQUENCY_SECONDS = 60*15
 
+OFF = 300
+ON = 7
 
 While True:
-
+    if 
 
 #Set Relay Pins
 #GPIO.setmode(GPIO.BCM)
