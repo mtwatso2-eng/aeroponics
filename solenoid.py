@@ -4,8 +4,15 @@
 import time
 import sys
 import datetime
-import csv
-import pandas as pd
+import HUMavg from mainloop
+import TEMPavg from mainloop
+import LIGHTavg from mainloop
+
+FREQUENCY_SECONDS = 60*15
+
+
+While True:
+
 
 #Set Relay Pins
 #GPIO.setmode(GPIO.BCM)
@@ -20,15 +27,15 @@ import pandas as pd
 
 #Set loop time in seconds
 #FREQUENCY_SECONDS       = 60
-print("live")
+#print("live")
 #Loop
-while True:
+#while True:
     #Save Data locally
-    df = pd.read_csv("output.csv")
-    Humidity = df.Humidity
-    Temp = df.Temp
-    LightVa = df.LightValue
-    LightVo = df.LightVoltage
-    break
+#    df = pd.read_csv("output.csv")
+#    Humidity = df.Humidity
+#    Temp = df.Temp
+#    LightVa = df.LightValue
+#    LightVo = df.LightVoltage
+#    break
 
 print(Humidity, Temp, LightVa, LightVo)

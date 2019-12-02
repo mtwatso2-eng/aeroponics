@@ -56,43 +56,44 @@ print('Press Ctrl-C to quit.')
 
 #setvariables and type
 humidity = 0.0
-temp = 0.0
+temperature = 0.0
 ads = 0.0
 chan = 0.0
 
 #create lists
 HUM = []
-TEM = []
+TEMP = []
 LIGHT = []
 
 #Loop
 while True:
     #Read sensors
-    humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
+    humidity, temperature = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
-    if humidity is None or temp is None:
+    if humidity is None or temperature is None:
         time.sleep(2)
         continue
     HUM.append(humidity)
-    TEM.append(temp)
+    TEMP.append(temperature)
     LIGHT.append(chan.value)
     count = len(HUM)
     if (count >= 5):
         HUM.append(humidity)
-        TEM.append(temp)
+        TEMP.append(temperature)
         LIGHT.append(chan.value)
     else:
         continue
+    print(len(HUM, TEMP, LIGHT))
     HUMsum = sum(HUM)
-    TEMsum = sum(TEM)
+    TEMPsum = sum(TEMP)
     LIGHTsum = sum(LIGHT)
     HUMavg = HUMsum/5
-    TEMavg = TEMsum/5
+    TEMPavg = TEMPsum/5
     LIGHTavg = LIGHTsum/5
-    print(HUMavg, TEMavg, LIGHTavg)
+    print(HUMavg, TEMPavg, LIGHTavg)
     HUM.pop()
-    TEM.pop()
+    TEMP.pop()
     LIGHT.pop()
     time.sleep(FREQUENCY_SECONDS)
 
@@ -101,5 +102,5 @@ while True:
     #Save Data locally
     #with open('output.csv', 'a', newline='') as output:
     #    output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    #    output.writerow([humidity, temp, chan.value, chan.voltage])
+    #    output.writerow([humidity, temperature, chan.value, chan.voltage])
     #time.sleep(FREQUENCY_SECONDS)
