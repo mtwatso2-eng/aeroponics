@@ -48,19 +48,19 @@ DHT_PIN = 23
 #    GPIO.output(i, GPIO.HIGH)
 
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 30
+FREQUENCY_SECONDS       = 10
 
 #PrintToConsole
 print('Logging sensor measurements to {0} every {1} seconds.')
 print('Press Ctrl-C to quit.')
 
-#setvariables and type
+#setvariables and type    ####This is probably unneccessary
 humidity = 0.0
 temperature = 0.0
 ads = 0.0
 chan = 0.0
 
-#create lists
+#create lists ###And this?? Maybe?
 HUM = []
 TEMP = []
 LIGHT = []
@@ -78,12 +78,16 @@ while True:
     TEMP.append(temperature)
     LIGHT.append(chan.value)
     count = len(HUM)
-    if (count < 5):
+    if (count == 5):
+        continue
+    elif (count > 5):
+        HUM.pop()
+        TEMP.pop()
+        LIGHT.pop()
+    elif (count < 5):
         HUM.append(humidity)
         TEMP.append(temperature)
         LIGHT.append(chan.value)
-    else:
-        continue
     print(len(HUM), len(TEMP), len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
