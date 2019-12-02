@@ -65,10 +65,6 @@ while True:
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
-    print(humidity)
-    float(humidity)
-    float(temp)
-    float(chan.value)
 
     HUM.append(humidity)
     TEM.append(temp)
