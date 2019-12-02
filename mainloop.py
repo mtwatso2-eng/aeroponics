@@ -54,6 +54,9 @@ FREQUENCY_SECONDS       = 5
 print('Logging sensor measurements to {0} every {1} seconds.')
 print('Press Ctrl-C to quit.')
 
+#setvariables and type
+humidity, temp, ads, chan = 0.0
+
 #create lists
 HUM = []
 TEM = []
