@@ -78,7 +78,7 @@ while True:
     TEMP.append(temperature)
     LIGHT.append(chan.value)
     count = len(HUM)
-    if (count >= 5):
+    if (count < 5):
         HUM.append(humidity)
         TEMP.append(temperature)
         LIGHT.append(chan.value)
