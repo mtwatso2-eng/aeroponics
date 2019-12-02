@@ -65,16 +65,18 @@ while True:
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
     ads = ADS.ADS1115(i2c)
     chan = AnalogIn(ads, ADS.P2)
-
+    float(humidity, temp, chan.value)
     HUM.append(humidity)
     TEM.append(temp)
     LIGHT.append(chan.value)
 
     count = len(HUM)
-    if count>=5
+    if (count >= 5):
         HUM.pop()
         TEM.pop()
         LIGHT.pop()
+        continue
+    else:
         continue
     HUMsum = sum(HUM)
     TEMsum = sum(TEM)
