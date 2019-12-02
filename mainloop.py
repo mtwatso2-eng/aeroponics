@@ -81,9 +81,6 @@ while True:
         LIGHT.append(chan.value)
     else:
         continue
-    HUM.pop()
-    TEM.pop()
-    LIGHT.pop()
     HUMsum = sum(HUM)
     TEMsum = sum(TEM)
     LIGHTsum = sum(LIGHT)
@@ -91,6 +88,9 @@ while True:
     TEMavg = TEMsum/5
     LIGHTavg = LIGHTsum/5
     print(HUMavg, TEMavg, LIGHTavg)
+    HUM.pop()
+    TEM.pop()
+    LIGHT.pop()
     time.sleep(FREQUENCY_SECONDS)
 
 
