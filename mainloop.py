@@ -93,7 +93,7 @@ while True:
     HUMavg = HUMsum/count
     TEMPavg = TEMPsum/count
     #LIGHTavg = LIGHTsum/count
-    print(HUMavg, TEMPavg, LIGHTavg)
+    print(HUMavg, TEMPavg) #LIGHTavg)
     print(TEMP)
     #print(LIGHT)
     HUM.pop(0)
