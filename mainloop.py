@@ -86,7 +86,7 @@ while True:
         HUM.append(humidity)
         TEMP.append(temperature)
         #LIGHT.append(chan.value)
-    print(len(HUM), len(TEMP), len(LIGHT))
+    print(len(HUM), len(TEMP)) #len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
     #LIGHTsum = sum(LIGHT)
