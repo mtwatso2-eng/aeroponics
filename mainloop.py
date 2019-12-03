@@ -58,6 +58,10 @@ HUM = []
 TEMP = []
 LIGHT = []
 
+OFF = 300
+ON = 7
+
+
 #Loop
 while True:
     #Read sensors
@@ -95,6 +99,19 @@ while True:
     HUM.pop(0)
     TEMP.pop(0)
     LIGHT.pop(0)
+    if (TEMPavg < 26):
+        continue
+    elif (TEMPavg >=26 and TEMPavg <= 32):
+        ON = 7.5
+    elif (TEMPavg >32 and TEMPavg < 35):
+        ON = 8
+    elif (TEMPavg >= 35 and TEMPavg <= 38):
+        ON = 9
+    elif (TEMPavg > 38 and TEMPavg < 41 ):
+        ON = 10
+    elif (TEMPavg >= 41):
+        ON = 11
+
     time.sleep(FREQUENCY_SECONDS)
 
 
