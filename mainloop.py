@@ -69,7 +69,7 @@ while True:
         continue
     HUM.append(humidity)
     TEMP.append(temperature)
-    LIGHT.append(chan.value)
+    LIGHT.append(chan.voltage)
     count = len(HUM)
     length = 15
     if (count == length):
