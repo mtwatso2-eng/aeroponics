@@ -71,13 +71,14 @@ while True:
     TEMP.append(temperature)
     LIGHT.append(chan.value)
     count = len(HUM)
-    if (count == 5):
+    length = 15
+    if (count == length):
         continue
-    elif (count > 5):
+    elif (count > length):
         HUM.pop(0)
         TEMP.pop(0)
         LIGHT.pop(0)
-    elif (count < 5):
+    elif (count < length):
         HUM.append(humidity)
         TEMP.append(temperature)
         LIGHT.append(chan.value)
@@ -85,9 +86,9 @@ while True:
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
     LIGHTsum = sum(LIGHT)
-    HUMavg = HUMsum/5
-    TEMPavg = TEMPsum/5
-    LIGHTavg = LIGHTsum/5
+    HUMavg = HUMsum/count
+    TEMPavg = TEMPsum/count
+    LIGHTavg = LIGHTsum/count
     print(HUMavg, TEMPavg, LIGHTavg)
     print(TEMP)
     print(LIGHT)
