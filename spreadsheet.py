@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 # Copyright (c) 2014 Adafruit Industries
 # Author: Tony DiCola
@@ -30,7 +31,7 @@ import socket
 
 # Configure ADC connections
 # Try to create an I2C device
-i2c = busio.I2C(board.SCL, board.SDA)
+#i2c = busio.I2C(board.SCL, board.SDA)
 # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
@@ -70,8 +71,8 @@ while True:
 
     # Attempt to get sensor reading.
     humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
-    ads = ADS.ADS1115(i2c)
-    chan = AnalogIn(ads, ADS.P2)
+#    ads = ADS.ADS1115(i2c)
+#    chan = AnalogIn(ads, ADS.P2)
 
     #Fetch IP address
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -88,11 +89,11 @@ while True:
 
     print('Temperature: {0:0.1f} C'.format(temp))
     print('Humidity:    {0:0.1f} %'.format(humidity))
-    print(chan.value, chan.voltage)
+#    print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, chan.value, chan.voltage, ip))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, ip)) #chan.value, chan.voltage, ip))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
