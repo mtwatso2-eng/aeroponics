@@ -28,7 +28,7 @@ import sys
 
 # Configure ADC connections
 # Try to create an I2C device
-i2c = busio.I2C(board.SCL, board.SDA)
+#i2c = busio.I2C(board.SCL, board.SDA)
 
 # Try to create an SPI device
 import adafruit_ads1x15.ads1115 as ADS
@@ -56,7 +56,7 @@ chan = 0.0
 #create lists ###And this?? Maybe?
 HUM = []
 TEMP = []
-LIGHT = []
+#LIGHT = []
 
 OFF = 300
 ON = 7
@@ -66,14 +66,14 @@ ON = 7
 while True:
     #Read sensors
     humidity, temperature = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
-    ads = ADS.ADS1115(i2c)
-    chan = AnalogIn(ads, ADS.P2)
+    #ads = ADS.ADS1115(i2c)
+    #chan = AnalogIn(ads, ADS.P2)
     if humidity is None or temperature is None:
         time.sleep(2)
         continue
     HUM.append(humidity)
     TEMP.append(temperature)
-    LIGHT.append(chan.voltage)
+    #LIGHT.append(chan.voltage)
     count = len(HUM)
     length = 15
     if (count == length):
@@ -81,24 +81,24 @@ while True:
     elif (count > length):
         HUM.pop(0)
         TEMP.pop(0)
-        LIGHT.pop(0)
+        #LIGHT.pop(0)
     elif (count < length):
         HUM.append(humidity)
         TEMP.append(temperature)
-        LIGHT.append(chan.value)
+        #LIGHT.append(chan.value)
     print(len(HUM), len(TEMP), len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
-    LIGHTsum = sum(LIGHT)
+    #LIGHTsum = sum(LIGHT)
     HUMavg = HUMsum/count
     TEMPavg = TEMPsum/count
-    LIGHTavg = LIGHTsum/count
+    #LIGHTavg = LIGHTsum/count
     print(HUMavg, TEMPavg, LIGHTavg)
     print(TEMP)
-    print(LIGHT)
+    #print(LIGHT)
     HUM.pop(0)
     TEMP.pop(0)
-    LIGHT.pop(0)
+    #LIGHT.pop(0)
     if (TEMPavg < 26):
         continue
     elif (TEMPavg >=26 and TEMPavg <= 32):
