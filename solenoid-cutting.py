@@ -5,7 +5,7 @@ import time
 import sys
 import datetime
 import RPi.GPIO as GPIO
-from setup import pinList
+#from setup import pinList
 import time
 import threading
 
@@ -22,10 +22,11 @@ pinList = [21]
 # time to sleep between operations in the main loop
 
 ON = 5
+OFF = 10
 
 # main loop
 while True:
-    from mainloop import OFF
+    #from mainloop import OFF
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
