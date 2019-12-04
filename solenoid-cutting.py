@@ -4,8 +4,8 @@
 import time
 import sys
 import datetime
-import ON from mainloop
-import OFF from mainloop
+from mainloop import ON
+from mainloop import OFF
 import RPi.GPIO as GPIO
 from setup import pinList
 import time
