@@ -26,7 +26,8 @@ ON = 5
 
 # main loop
 while True:
-    from mainloop import OFF
+    OFF = open("OFF.txt", "r")
+    print(OFF)
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
