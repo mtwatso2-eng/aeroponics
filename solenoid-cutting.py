@@ -20,8 +20,6 @@ pinList = [21]
 
     # time to sleep between operations in the main loop
 
-    SleepTimeL = OFF
-
     # main loop
 while True:
     try:

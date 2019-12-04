@@ -51,7 +51,9 @@ print('Press Ctrl-C to quit.')
 humidity = 0.0
 temperature = 0.0
 ads = 0.0
-chan = 0.0
+chan = 0.0# Reset GPIO settings
+GPIO.cleanup()
+
 
 #create lists ###And this?? Maybe?
 HUM = []
@@ -93,8 +95,8 @@ while True:
     HUMavg = HUMsum/count
     TEMPavg = TEMPsum/count
     #LIGHTavg = LIGHTsum/count
+    print(TEMP, HUM)
     print(HUMavg, TEMPavg) #LIGHTavg)
-    print(TEMP)
     #print(LIGHT)
     HUM.pop(0)
     TEMP.pop(0)
