@@ -4,11 +4,10 @@
 import time
 import sys
 import datetime
-from mainloop import ON
-from mainloop import OFF
 import RPi.GPIO as GPIO
 from setup import pinList
 import time
+import threading
 
 # loop through pins and set mode and state to 'high'
 #Set Relay Pins
@@ -24,6 +23,7 @@ pinList = [21]
 
 # main loop
 while True:
+    from mainloop import OFF
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
