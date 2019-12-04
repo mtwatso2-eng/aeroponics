@@ -43,3 +43,4 @@ while True:
         time.sleep(OFF)
         GPIO.cleanup()
     except (KeyboardInterrupt, SystemExit):
+        break
