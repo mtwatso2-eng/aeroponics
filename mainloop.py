@@ -40,8 +40,6 @@ print("Connected")
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
-ON = 5
-
 #Set loop time in seconds
 FREQUENCY_SECONDS       = 10
 
@@ -63,7 +61,6 @@ TEMP = []
 #LIGHT = []
 
 OFF = 300
-ON = 7
 
 
 #Loop
@@ -107,15 +104,15 @@ def update_OFF(OFF):
         if (TEMPavg < 26):
             continue
         elif (TEMPavg >=26 and TEMPavg <= 32):
-            OFF = 295
+            OFF = 2
         elif (TEMPavg >32 and TEMPavg < 35):
-            OFF = 280
+            OFF = 4
         elif (TEMPavg >= 35 and TEMPavg <= 38):
-            OFF = 270
+            OFF = 6
         elif (TEMPavg > 38 and TEMPavg < 41 ):
-            OFF = 250
+            OFF = 8
         elif (TEMPavg >= 41):
-            OFF = 230
+            OFF = 10
 
         time.sleep(FREQUENCY_SECONDS)
 
