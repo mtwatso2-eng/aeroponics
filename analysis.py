@@ -17,6 +17,6 @@ while True:
             OFF = 4
         elif (TEMPavg >= 41):
             OFF = 2
-        file_object = open("OFF.txt","w")
+        file = open("OFF.txt","w")
         file.write(OFF)
         time.sleep(15*60)

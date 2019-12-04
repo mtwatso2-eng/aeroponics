@@ -100,7 +100,7 @@ while True:
     HUM.pop(0)
     TEMP.pop(0)
     #LIGHT.pop(0)
-    file_object = open("Temp.txt","w")
+    file = open("Temp.txt","w")
     file.write(TEMPavg)
     time.sleep(FREQUENCY_SECONDS)
 
