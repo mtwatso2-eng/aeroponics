@@ -15,7 +15,7 @@ import threading
 
 #init list with pin numbers
 pinList = [21]
-GPIO.cleanup()
+#GPIO.cleanup()
 
 #Set all pins high
 #for i in pinList:
