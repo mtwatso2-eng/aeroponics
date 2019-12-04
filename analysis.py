@@ -5,9 +5,7 @@ import sys
 while True:
     file = open("Temp.txt","r")
     TEMPavg = file.read()
-    print(TEMPavg)
     TEMPavg = float(TEMPavg)
-    print(type(TEMPavg))
     if (TEMPavg < 26):
         OFF = 4
     elif (TEMPavg >=26 and TEMPavg <= 32):
