@@ -22,11 +22,11 @@ pinList = [21]
 # time to sleep between operations in the main loop
 
 ON = 5
-OFF = 10
+#OFF = 10
 
 # main loop
 while True:
-    #from mainloop import OFF
+    from mainloop import OFF
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
