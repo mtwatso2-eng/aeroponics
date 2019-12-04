@@ -25,6 +25,7 @@ import csv
 import time
 import datetime
 import sys
+import threading
 
 # Configure ADC connections
 # Try to create an I2C device
