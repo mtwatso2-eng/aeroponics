@@ -4,8 +4,7 @@ import sys
 
 while True:
     file = open("Temp.txt","r")
-    TEMPavg = file
-    str(TEMPavg)
+    TEMPavg = file.read()
     print(TEMPavg)
     int(TEMPavg)
     if (TEMPavg < 26):
