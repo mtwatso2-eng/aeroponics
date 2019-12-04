@@ -11,7 +11,7 @@ import threading
 
 # loop through pins and set mode and state to 'high'
 #Set Relay Pins
-GPIO.setmode(GPIO.BCM)
+
 
 #init list with pin numbers
 pinList = [21]
@@ -27,6 +27,7 @@ OFF = 10
 # main loop
 while True:
     #from mainloop import OFF
+    GPIO.setmode(GPIO.BCM)
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
@@ -35,6 +36,7 @@ while True:
         print ("ON")
         time.sleep(ON);
         GPIO.output(21, GPIO.HIGH)
+        print("OFF")
         time.sleep(OFF)
         GPIO.cleanup()
         continue
