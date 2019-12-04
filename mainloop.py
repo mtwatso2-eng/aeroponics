@@ -52,7 +52,7 @@ humidity = 0.0
 temperature = 0.0
 ads = 0.0
 chan = 0.0# Reset GPIO settings
-GPIO.cleanup()
+
 
 
 #create lists ###And this?? Maybe?
