@@ -4,8 +4,8 @@
 
 sudo python3 spreadsheet.py &
 sudo python3 mainloop.py &
-sleep 2m &
+sleep 1m
 sudo python3 analysis.py &
-sleep 10 &
+sleep 10
 sudo python3 solenoid-cutting.py &
-exit 0
+
