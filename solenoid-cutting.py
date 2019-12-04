@@ -21,7 +21,7 @@ pinList = [21]
 
 # time to sleep between operations in the main loop
 
-ON = 5
+ON = 2
 #OFF = 10
 
 # main loop

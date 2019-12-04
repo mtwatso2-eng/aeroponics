@@ -41,7 +41,7 @@ DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 10
+FREQUENCY_SECONDS       = 3
 
 #PrintToConsole
 print('Logging sensor measurements to {0} every {1} seconds.')

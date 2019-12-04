@@ -9,7 +9,7 @@ while True:
     TEMPavg = float(TEMPavg)
     print(type(TEMPavg))
     if (TEMPavg < 26):
-        OFF = 12
+        OFF = 4
     elif (TEMPavg >=26 and TEMPavg <= 32):
         OFF = 10
     elif (TEMPavg >32 and TEMPavg < 35):
