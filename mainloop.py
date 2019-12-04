@@ -117,7 +117,7 @@ def update_OFF(OFF):
 
         time.sleep(FREQUENCY_SECONDS)
 
-threading.Thread((target=update_OFF, args=(OFF,)).start()
+threading.Thread(target=update_OFF, args=(OFF,)).start()
 
 
         #Save Data locally
