@@ -28,10 +28,12 @@ while True:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
     try:
-      GPIO.output(21, GPIO.LOW)
-      print ("ON")
-      time.sleep(ON);
-      GPIO.output(21, GPIO.HIGH)
-      time.sleep(OFF)
-      GPIO.cleanup()
-      continue
+        GPIO.output(21, GPIO.LOW)
+        print ("ON")
+        time.sleep(ON);
+        GPIO.output(21, GPIO.HIGH)
+        time.sleep(OFF)
+        GPIO.cleanup()
+        continue
+    except KeyboardInterrupt:
+        print ("  Quit")
