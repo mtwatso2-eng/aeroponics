@@ -28,7 +28,7 @@ ON = 5
 while True:
     file = open("OFF.txt", "r")
     OFF = file.read()
-    int(OFF)
+    OFF = int(OFF)
     print(OFF)
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
