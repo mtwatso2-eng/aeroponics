@@ -42,4 +42,4 @@ while True:
         print("OFF")
         time.sleep(OFF)
         GPIO.cleanup()
-    except KeyboardInterrupt, SystemExit):
+    except (KeyboardInterrupt, SystemExit):
