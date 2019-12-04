@@ -4,7 +4,7 @@ import sys
 
 while True:
     file = open("Temp.txt","r")
-    file = TEMPavg
+    TEMPavg = file
     str(TEMPavg)
     print(TEMPavg)
     int(TEMPavg)
