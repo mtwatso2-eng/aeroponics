@@ -6,7 +6,7 @@ while True:
     file = open("Temp.txt","r")
     TEMPavg = file.read()
     print(TEMPavg)
-    int(TEMPavg)
+    float(TEMPavg)
     if (TEMPavg < 26):
         continue
     elif (TEMPavg >=26 and TEMPavg <= 32):

@@ -26,7 +26,8 @@ ON = 5
 
 # main loop
 while True:
-    OFF = open("OFF.txt", "r")
+    file = open("OFF.txt", "r")
+    OFF = file.read()
     int(OFF)
     print(OFF)
     GPIO.setmode(GPIO.BCM)
