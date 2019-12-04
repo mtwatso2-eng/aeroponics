@@ -37,5 +37,5 @@ while True:
     except KeyboardInterrupt:
         print ("  Quit")
 
-# Reset GPIO settings
-GPIO.cleanup()
+    # Reset GPIO settings
+    GPIO.cleanup()
