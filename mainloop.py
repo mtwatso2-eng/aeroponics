@@ -96,12 +96,14 @@ while True:
     #LIGHTavg = LIGHTsum/count
     print('Temperature: {0:0.1f} C'.format(TEMPavg))
     print('Humidity:    {0:0.1f} %'.format(HUMavg))
+    TEMPavg = round(TEMPavg, 2)
+    HUMavg = round(HUMavg, 2)
     #print(LIGHT)
     HUM.pop(0)
     TEMP.pop(0)
     #LIGHT.pop(0)
     file = open("Temp.txt","w")
-    file.write(TEMPavg)
+    file.write(str(TEMPavg))
     time.sleep(FREQUENCY_SECONDS)
 
         #Save Data locally

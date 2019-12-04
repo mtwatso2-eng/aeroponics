@@ -5,6 +5,7 @@ import sys
 while True:
     TEMPavg = open("Temp.txt","r")
     print(TEMPavg)
+    int(TEMPavg)
     if (TEMPavg < 26):
             continue
         elif (TEMPavg >=26 and TEMPavg <= 32):
@@ -18,5 +19,5 @@ while True:
         elif (TEMPavg >= 41):
             OFF = 2
         file = open("OFF.txt","w")
-        file.write(OFF)
+        file.write(str(OFF))
         time.sleep(15*60)
