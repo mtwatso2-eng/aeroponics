@@ -40,6 +40,7 @@ print("Connected")
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
+ON = 5
 
 #Set loop time in seconds
 FREQUENCY_SECONDS       = 10

@@ -21,6 +21,8 @@ pinList = [21]
 
 # time to sleep between operations in the main loop
 
+ON = 5
+
 # main loop
 while True:
     from mainloop import OFF
