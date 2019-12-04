@@ -34,3 +34,4 @@ while True:
       GPIO.output(21, GPIO.HIGH)
       time.sleep(OFF)
       GPIO.cleanup()
+      continue
