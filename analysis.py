@@ -3,7 +3,9 @@ import datetime
 import sys
 
 while True:
-    TEMPavg = open("Temp.txt","r")
+    file = open("Temp.txt","r")
+    file = TEMPavg
+    str(TEMPavg)
     print(TEMPavg)
     int(TEMPavg)
     if (TEMPavg < 26):
