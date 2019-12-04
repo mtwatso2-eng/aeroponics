@@ -15,6 +15,7 @@ import threading
 
 #init list with pin numbers
 pinList = [21]
+GPIO.cleanup()
 
 #Set all pins high
 #for i in pinList:
@@ -42,5 +43,6 @@ while True:
         print("OFF")
         time.sleep(OFF)
         GPIO.cleanup()
+        continue
     except (KeyboardInterrupt, SystemExit):
         break
