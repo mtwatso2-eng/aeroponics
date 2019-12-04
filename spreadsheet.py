@@ -45,7 +45,7 @@ DHT_PIN = 23
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
 GDOCS_SPREADSHEET_NAME  = 'AeroponicsData'
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 60
+FREQUENCY_SECONDS       = 900
 # Open google credentials and attempt to log in and find the correct spreadsheet
 def login_open_sheet(oauth_key_file, spreadsheet):
     """Connect to Google Docs spreadsheet and return the first worksheet."""
@@ -82,7 +82,7 @@ while True:
     s.close()
 
     # Skip to the next reading if a valid measurement couldn't be taken.
-    
+
     if humidity is None or temp is None:
         time.sleep(2)
         continue
