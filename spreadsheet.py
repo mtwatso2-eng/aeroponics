@@ -45,7 +45,7 @@ DHT_PIN = 23
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
 GDOCS_SPREADSHEET_NAME  = 'AeroponicsData'
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 900
+FREQUENCY_SECONDS       = 9
 # Open google credentials and attempt to log in and find the correct spreadsheet
 def login_open_sheet(oauth_key_file, spreadsheet):
     """Connect to Google Docs spreadsheet and return the first worksheet."""
@@ -100,7 +100,6 @@ while True:
         print('Append error, logging in again')
         worksheet = None
         time.sleep(FREQUENCY_SECONDS)
-        continue
 
     # Wait 60 seconds before continuing
     print('Wrote a row to {0}'.format(GDOCS_SPREADSHEET_NAME))
