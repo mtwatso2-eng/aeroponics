@@ -85,7 +85,7 @@ while True:
 
     if humidity is None or temp is None:
         time.sleep(2)
-    else
+    elif
         continue
 
     print('Temperature: {0:0.1f} C'.format(temp))
