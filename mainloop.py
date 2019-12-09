@@ -97,8 +97,8 @@ while True:
     #LIGHTavg = LIGHTsum/count
     #print('Temperature: {0:0.1f} C'.format(TEMPavg))
     #print('Humidity:    {0:0.1f} %'.format(HUMavg))
-    TEMPavg = round(TEMPavg, 2)
-    HUMavg = round(HUMavg, 2)
+    TEMPavg = round(TEMPavg, 3)
+    HUMavg = round(HUMavg, 3)
     #print(LIGHT)
     HUM.pop(0)
     TEMP.pop(0)
