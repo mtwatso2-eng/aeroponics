@@ -89,7 +89,7 @@ while True:
         continue
 
     print(temp)
-    print((humidity)
+    print(humidity)
     print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
