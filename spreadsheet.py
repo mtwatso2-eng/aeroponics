@@ -88,8 +88,8 @@ while True:
     else:
         continue
 
-    print('Temperature: {0:0.1f} C'.format(TEMPavg))
-    print('Humidity:    {0:0.1f} %'.format(HUMavg))
+    print('Temperature: {0:0.1f} C'.format(temp))
+    print('Humidity:    {0:0.1f} %'.format(humidity))
     #print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
