@@ -8,6 +8,8 @@ while True:
 
     pinList = [21]
 
+    GPIO.setmode(GPIO.BCM)
+
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
