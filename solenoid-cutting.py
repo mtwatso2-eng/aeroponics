@@ -45,6 +45,6 @@ while True:
             time.sleep(OFF)
             GPIO.cleanup()
             continue
-    except (KeyboardInterrupt, SystemExit):
-        GPIO.cleanup()
-        break
+        except (KeyboardInterrupt, SystemExit):
+            GPIO.cleanup()
+            break
