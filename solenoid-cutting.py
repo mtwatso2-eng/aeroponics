@@ -33,8 +33,8 @@ while True:
     #print(OFF)
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
-    GPIO.setup(i, GPIO.OUT)
-    GPIO.output(i, GPIO.HIGH)
+        GPIO.setup(i, GPIO.OUT)
+        GPIO.output(i, GPIO.HIGH)
     try:
         GPIO.output(21, GPIO.LOW)
         #print ("ON")
