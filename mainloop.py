@@ -88,15 +88,15 @@ while True:
         TEMP.append(temperature)
         #LIGHT.append(chan.value)
     count = len(HUM)
-    #print(len(HUM), len(TEMP)) #len(LIGHT))
+    print(len(HUM), len(TEMP)) #len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
     #LIGHTsum = sum(LIGHT)
     HUMavg = HUMsum/count
     TEMPavg = TEMPsum/count
     #LIGHTavg = LIGHTsum/count
-    #print('Temperature: {0:0.1f} C'.format(TEMPavg))
-    #print('Humidity:    {0:0.1f} %'.format(HUMavg))
+    print('Temperature: {0:0.1f} C'.format(TEMPavg))
+    print('Humidity:    {0:0.1f} %'.format(HUMavg))
     TEMPavg = round(TEMPavg, 3)
     HUMavg = round(HUMavg, 3)
     #print(LIGHT)
