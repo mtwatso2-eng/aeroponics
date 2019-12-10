@@ -6,6 +6,7 @@ while True:
     import time
     # loop through pins and set mode and state to 'high'
 
+    pinList = [21]
 
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
