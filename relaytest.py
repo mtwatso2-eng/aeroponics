@@ -3,9 +3,9 @@
 
 while True:
     import RPi.GPIO as GPIO
-    from setup import pinList
     import time
     # loop through pins and set mode and state to 'high'
+
 
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
@@ -20,16 +20,6 @@ while True:
     try:
       GPIO.output(21, GPIO.LOW)
       print ("ONE")
-      time.sleep(SleepTimeL);
-      GPIO.output(22, GPIO.LOW)
-      print ("TWO")
-      time.sleep(SleepTimeL);
-      GPIO.output(27, GPIO.LOW)
-      print ("THREE")
-      time.sleep(SleepTimeL);
-      GPIO.output(17, GPIO.LOW)
-      print ("FOUR")
-      time.sleep(SleepTimeL);
       GPIO.cleanup()
       print ("Good bye!")
 
