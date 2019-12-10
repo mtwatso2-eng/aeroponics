@@ -45,7 +45,7 @@ DHT_PIN = 23
 GDOCS_OAUTH_JSON        = 'AeroponicsSpreadsheet-5f96f7f87ebd.json'
 GDOCS_SPREADSHEET_NAME  = 'AeroponicsData'
 #Set loop time in seconds
-FREQUENCY_SECONDS       = 60sudo
+FREQUENCY_SECONDS       = 60
 # Open google credentials and attempt to log in and find the correct spreadsheet
 def login_open_sheet(oauth_key_file, spreadsheet):
     """Connect to Google Docs spreadsheet and return the first worksheet."""
@@ -88,13 +88,13 @@ while True:
     else:
         continue
 
-    print(temp)
-    print(humidity)
+    print('Temperature: {0:0.1f} C'.format(TEMPavg))
+    print('Humidity:    {0:0.1f} %'.format(HUMavg))
     #print(chan.value, chan.voltage)
 
     # Append the data in the spreadsheet, including a timestamp
     try:
-        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity)) #chan.value, chan.voltage, ip))
+        worksheet.append_row((datetime.datetime.now().isoformat(), temp, humidity, ip)) #chan.value, chan.voltage, ip))
     except:
         # Error appending data, bad credentials
         # Null out the sheet for fresh restart
