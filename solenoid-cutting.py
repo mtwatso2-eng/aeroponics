@@ -34,12 +34,12 @@ while True:
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
-        GPIO.output(i, GPIO.HIGH)
+        GPIO.output(i, GPIO.LOW)
     try:
-        GPIO.output(21, GPIO.LOW)
+        GPIO.output(21, GPIO.HIGH)
         #print ("ON")
         time.sleep(ON);
-        GPIO.output(21, GPIO.HIGH)
+        GPIO.output(21, GPIO.LOW)
         #print("OFF")
         time.sleep(OFF)
         GPIO.cleanup()
