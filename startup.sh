@@ -1,8 +1,9 @@
 #!/bin/sh
 # startup.sh
 # change directories and execute startup programs
- cd /home/pi/code/aeroponics
- sudo python3 spreadsheet.py &
+cd /home/pi/code/aeroponics
+sudo python3 spreadsheet.py &
+exit 0
 #sudo python3 spreadsheet.py &
 #sudo python3 mainloop.py &
 #sleep 1m
