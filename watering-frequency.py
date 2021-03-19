@@ -106,7 +106,7 @@ while True:
     elif (TEMPavg >= 41):
         OFF = 10
     print(OFF)
-    file2 = open("OFF.txt","w")
+    file2 = open("watering-frequency.txt","w")
     file2.write(str(OFF))
     time.sleep(FREQUENCY_SECONDS)
 

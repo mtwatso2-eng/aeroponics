@@ -23,14 +23,17 @@ pinList = [21]
 # time to sleep between operations in the main loop
 
 ON = 4
-#OFF = 10
+# Set initial off duration – this changes based on OFF time
+OFF = 5
 
 # main loop
 while True:
-    file = open("OFF.txt", "r")
-    OFF = file.read()
-    OFF = int(OFF)
+    file = open("watering-frequency.txt", "r")
     print(OFF)
+    try:
+    	OFF = int(file.read())
+    except:
+    	pass
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
         GPIO.setup(i, GPIO.OUT)
