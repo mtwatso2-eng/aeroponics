@@ -31,7 +31,6 @@ import threading
 # Configure ADC connections
 # Try to create an I2C device
 #i2c = busio.I2C(board.SCL, board.SDA)
-
 # Try to create an SPI device
 #import adafruit_ads1x15.ads1115 as ADS
 #from adafruit_ads1x15.analog_in import AnalogIn
@@ -41,25 +40,13 @@ import threading
 DHT_TYPE = Adafruit_DHT.DHT22
 DHT_PIN = 23
 
-#Set loop time in seconds
-#how often a measurement will be taken
-FREQUENCY_SECONDS       = 10
+# How often a measurement will be taken
+FREQUENCY_SECONDS = 10
 
-#PrintToConsole - Not Necessary
-#print('Logging sensor measurements to {0} every {1} seconds.')
-#print('Press Ctrl-C to quit.')
-
-#setvariables and type    ####This is probably unneccessary
-humidity = 0.0
-temperature = 0.0
-ads = 0.0
-chan = 0.0
-
-#create lists ###And this also?? Maybe?
+# Create humidity and temperature arrays for running averages
 HUM = []
 TEMP = []
 #LIGHT = []
-
 
 #Loop
 while True:
@@ -93,23 +80,20 @@ while True:
         #LIGHT.append(chan.value)
     #Average the values
     count = len(HUM)
-    #print(len(HUM), len(TEMP)) #len(LIGHT))
     HUMsum = sum(HUM)
     TEMPsum = sum(TEMP)
     #LIGHTsum = sum(LIGHT)
     HUMavg = HUMsum/count
     TEMPavg = TEMPsum/count
     #LIGHTavg = LIGHTsum/count
-    #print('Temperature: {0:0.1f} C'.format(TEMPavg))
-    #print('Humidity:    {0:0.1f} %'.format(HUMavg))
     #Clean everything up
     TEMPavg = round(TEMPavg, 3)
     HUMavg = round(HUMavg, 3)
-    #print(LIGHT)
     #Remove first value of the list
     HUM.pop(0)
     TEMP.pop(0)
     #LIGHT.pop(0)
+    print(TEMPavg)
     if (TEMPavg < 26):
         OFF = 5
     elif (TEMPavg >=26 and TEMPavg <= 32):
