@@ -16,7 +16,7 @@ startTime = datetime.datetime.now()
 
 
 # time to sleep between operations in the main loop
-ON = 4
+ON = 1
 # Set initial off duration – this changes based on OFF time
 OFF = 5
 
@@ -24,13 +24,13 @@ OFF = 5
 while True:
 
     daysOld = -(startTime - datetime.datetime.now()).total_seconds() / 86400
-    maxDuration = 5
-    minDuration = 2
+    maxDuration = 3
+    minDuration = 1
     rateConstant = 0.5
-    daysMidpoint = 31
+    daysMidpoint = 7
     ON = maxDuration - (maxDuration - minDuration) / (1 + math.exp(-rateConstant * (daysOld - daysMidpoint)))
     # equation for desmos.com:
-    # y\ =\ \frac{\left(5-2\right)}{1+\ e^{-0.5\left(x-15\right)}}+2
+    # y\ =\ \frac{\left(3-1\right)}{1+\ e^{-0.5\left(x-7\right)}}+1
 
     file = open("temperature.txt", "r")
     try:
