@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aeroponics System
 ## NCSU Sweetpotato Breeding Group 2019
 
@@ -99,3 +100,6 @@ sudo pip3 install Adafruit_DHT
 sudo pip3 install gspread oauth2client
 
 13. Set the code to Autostart.
+=======
+# aeroponics
+>>>>>>> 10307f311cfcec86922bf124526ae6f7f3cd9c3d
