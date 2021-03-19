@@ -93,7 +93,6 @@ while True:
     HUM.pop(0)
     TEMP.pop(0)
     #LIGHT.pop(0)
-    print(TEMPavg)
     if (TEMPavg < 26):
         OFF = 5
     elif (TEMPavg >=26 and TEMPavg <= 32):
@@ -106,6 +105,7 @@ while True:
         OFF = 9
     elif (TEMPavg >= 41):
         OFF = 10
+    print(OFF)
     file2 = open("OFF.txt","w")
     file2.write(str(OFF))
     time.sleep(FREQUENCY_SECONDS)
