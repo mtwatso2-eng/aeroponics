@@ -92,26 +92,6 @@ while True:
     #Remove first value of the list
     HUM.pop(0)
     TEMP.pop(0)
-    #LIGHT.pop(0)
-    if (TEMPavg < 26):
-        OFF = 5
-    elif (TEMPavg >=26 and TEMPavg <= 32):
-        OFF = 6
-    elif (TEMPavg >32 and TEMPavg < 35):
-        OFF = 7
-    elif (TEMPavg >= 35 and TEMPavg <= 38):
-        OFF = 8
-    elif (TEMPavg > 38 and TEMPavg < 41 ):
-        OFF = 9
-    elif (TEMPavg >= 41):
-        OFF = 10
-    print(OFF)
-    file2 = open("watering-frequency.txt","w")
-    file2.write(str(OFF))
-    time.sleep(FREQUENCY_SECONDS)
 
-        #Save Data locally
-        #with open('output.csv', 'a', newline='') as output:
-        #    output = csv.writer(output, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        #    output.writerow([humidity, temperature, chan.value, chan.voltage])
-        #time.sleep(FREQUENCY_SECONDS)
+    file = open("temperature.txt","w")
+    file.write(str(TEMPavg))
