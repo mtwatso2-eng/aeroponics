@@ -110,8 +110,20 @@ while True:
     HUM.pop(0)
     TEMP.pop(0)
     #LIGHT.pop(0)
-    file = open("Temp.txt","w")
-    file.write(str(TEMPavg))
+    if (TEMPavg < 26):
+        OFF = 5
+    elif (TEMPavg >=26 and TEMPavg <= 32):
+        OFF = 6
+    elif (TEMPavg >32 and TEMPavg < 35):
+        OFF = 7
+    elif (TEMPavg >= 35 and TEMPavg <= 38):
+        OFF = 8
+    elif (TEMPavg > 38 and TEMPavg < 41 ):
+        OFF = 9
+    elif (TEMPavg >= 41):
+        OFF = 10
+    file2 = open("OFF.txt","w")
+    file2.write(str(OFF))
     time.sleep(FREQUENCY_SECONDS)
 
         #Save Data locally
