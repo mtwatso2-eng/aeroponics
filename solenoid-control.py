@@ -45,11 +45,11 @@ while True:
     except:
         pass
 
-    print(ON)
-    print(OFF)
-    time.sleep(2)
-
-    continue
+    # uncomment to see ON/OFF times without running solenoid
+    # print(ON)
+    # print(OFF)
+    # time.sleep(2)
+    # continue
 
     GPIO.setmode(GPIO.BCM)
     for i in pinList:
