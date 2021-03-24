@@ -22,7 +22,7 @@ OFF = 5
 # main loop
 while True:
     file = open("daysOffset.txt","r")
-    daysOffset = float(file.read(file))
+    daysOffset = float(file.read())
     daysOld = daysOffset - (startTime - datetime.datetime.now()).total_seconds() / 86400
     maxDuration = 3
     minDuration = 1
