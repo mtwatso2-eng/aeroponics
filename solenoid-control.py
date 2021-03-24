@@ -14,7 +14,6 @@ pinList = [21]
 startTime = datetime.datetime.now()
 
 
-
 # time to sleep between operations in the main loop
 ON = 1
 # Set initial off duration – this changes based on OFF time
@@ -22,8 +21,9 @@ OFF = 5
 
 # main loop
 while True:
-
-    daysOld = -(startTime - datetime.datetime.now()).total_seconds() / 86400
+    file = open("daysOffset.txt","r")
+    daysOffset = file.read(float(file))
+    daysOld = daysOffset - (startTime - datetime.datetime.now()).total_seconds() / 86400
     maxDuration = 3
     minDuration = 1
     rateConstant = 0.5
@@ -32,8 +32,8 @@ while True:
     # equation for desmos.com:
     # y\ =\ \frac{\left(3-1\right)}{1+\ e^{-0.5\left(x-7\right)}}+1
 
-    file = open("temperature.txt", "r")
     try:
+        file = open("temperature.txt", "r")
         TEMPavg = float(file.read())
         maxPeriod = 300
         minPeriod = 250
